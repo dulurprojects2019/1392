@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Acc_levels extends CI_Controller {
 
 	function __construct()
 	{
@@ -11,7 +11,7 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		$data['content_header'] = "Dashboard";
-		$this->temp_backend->load('backend/theme/template', 'backend/dashboard/home', $data);
+		$data['title_header'] = "Levels List";
+		$this->temp_backend->load('backend/theme/template', 'backend/accounts/levels/levels_list', $data);
 	}
 }
