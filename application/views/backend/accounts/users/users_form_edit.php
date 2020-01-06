@@ -35,14 +35,9 @@
             <form role="form">
               <div class="card-body">
                 <div class="form-group">
-                  <select name="usr_level_id" class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
-                    <?php foreach ($levels as $level): ?>
-                      <?php if ($level['lvl_id'] == $level['usr_level_id']): ?>
-                        <option value="<?= $level['lvl_id']; ?>" selected="selected"><?= $level['lvl_name']; ?></option>
-                      <?php else : ?>
-                        <option value="<?= $level['lvl_id']; ?>"><?= $level['lvl_name']; ?></option>
-                      <?php endif ?>
-                    <?php endforeach ?>
+                  <select name="usr_lvl_id" class="form-control">
+                    <option value="">a</option>
+                    <option>b</option>
                   </select>
                 </div>
                 <div class="form-group">

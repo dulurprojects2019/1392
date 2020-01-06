@@ -12,14 +12,15 @@ class Acc_users extends CI_Controller {
 	public function index()
 	{
 		$data['title_header'] = "Users List";
-		$data['title_menu'] = "Add Users";
+		$data['title_menu'] = "Add User";
 		
 		$this->temp_backend->load('backend/theme/template', 'backend/accounts/users/users_list', $data);
 	}
 
 	public function add(){
 		$data['levels'] = $this->users_m->get_levels();
-		$data['titlebar'] = 'Add Users';
+		$data['title_header'] = 'Add User';
+		$data['title_menu'] = "Users List";
 
 		$this->form_validation->set_rules('usr_fullname', 'Fullname', 'required');
 		$this->form_validation->set_rules('usr_email', 'Email / Username', 'required|is_unique[users.usr_email]');
