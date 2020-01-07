@@ -6,22 +6,25 @@ class Acc_levels extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();		
-		// check_not_login();
+		check_not_login();
+		check_bukan_level_staff();
 	}
 
 	public function index()
 	{
-		$data['title_header'] = "Levels List";
-		$data['title_menu'] = "Add Level";
-		$data['controllers'] = "levels";
-		$data['levels'] = $this->levels_m->get_levels();
+		$data['levels'] 		= $this->levels_m->get_levels();
+		$data['iconbar'] 		= $this->global_m->get_iconbar();
+		$data['title_header'] 	= "Levels List";
+		$data['title_menu'] 	= "Add Level";
+		$data['controllers'] 	= "levels";
 		$this->temp_backend->load('backend/theme/template', 'backend/accounts/levels/levels_list', $data);
 	}
 
 	public function add(){
-		$data['title_header'] = "Add Levels";
-		$data['title_menu'] = "List Levels";
-		$data['controllers'] = "levels";
+		$data['iconbar'] 		= $this->global_m->get_iconbar();
+		$data['title_header'] 	= "Add Levels";
+		$data['title_menu'] 	= "List Levels";
+		$data['controllers'] 	= "levels";
 
 		$this->form_validation->set_rules('lvl_name', 'Level Name', 'required|is_unique[users_level.lvl_name]');
 
@@ -39,10 +42,11 @@ class Acc_levels extends CI_Controller {
 	}
 
 	public function edit($slug = NULL){
-		$data['title_header'] = "Edit Levels";
-		$data['title_menu'] = "List Levels";
-		$data['controllers'] = "levels";
-		$data['levels'] = $this->levels_m->get_levelsview($slug);
+		$data['levels'] 		= $this->levels_m->get_levelsview($slug);
+		$data['iconbar'] 		= $this->global_m->get_iconbar();
+		$data['title_header'] 	= "Edit Levels";
+		$data['title_menu'] 	= "List Levels";
+		$data['controllers'] 	= "levels";
 
 		if(empty($data['levels'])){
 			show_404();

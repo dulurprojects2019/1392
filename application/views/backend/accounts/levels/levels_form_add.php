@@ -36,7 +36,7 @@
             <form role="form" action="<?= site_url('accounts/'.$controllers.'/add') ?>" method="post" enctype="multipart">
               <div class="card-body">
                 <div class="form-group">
-                  <input type="Text" name="lvl_name" class="form-control <?= form_error('lvl_name') == TRUE ? 'is-invalid' : ''; ?>" id="exampleInputEmail1" placeholder="Enter Level Name">
+                  <input type="Text" name="lvl_name" class="form-control <?= form_error('lvl_name') == TRUE ? 'is-invalid' : ''; ?>" placeholder="Enter Level Name">
                   <a style="color: red;"><?= form_error('lvl_name') ?></a>
                 </div>
                 <div class="form-group">

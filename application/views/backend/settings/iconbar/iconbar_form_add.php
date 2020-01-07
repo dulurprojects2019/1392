@@ -6,14 +6,13 @@
       <div class="row mb-2">
         <div class="col-sm-6">
           <h3 class="card-title">
-              <a href="<?= site_url('accounts/'.$controllers.'/levels-list') ?>" ><button type="button" class="btn btn-block btn-primary"><i class="fas fa-list"></i> <?= $title_menu; ?></button></a>
+              <a href="<?= site_url('accounts/users/users-list') ?>" ><button type="button" class="btn btn-block btn-primary"><i class="fas fa-list"></i> <?= $title_menu; ?></button></a>
             </h3>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="<?= site_url() ?>">Home</a></li>
-            <li class="breadcrumb-item active"><?= $title_header; ?></li>
-          </ol>
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">General Form</li>
           </ol>
         </div>
       </div>
@@ -33,15 +32,24 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" method="post" enctype="multipart">
+            <form role="form" action="<?= site_url('settings/'.$controllers.'/add') ?>" method="post" enctype="multipart/form-data">
               <div class="card-body">
                 <div class="form-group">
-                  <input type="Hidden" name="lvl_id" value="<?= $levels['lvl_id'] ?>">
-                  <input type="Text" name="lvl_name" value="<?= $levels['lvl_name'] ?>" class="form-control <?= form_error('lvl_name') == TRUE ? 'is-invalid' : ''; ?>" placeholder="Enter Level Name">
-                  <a style="color: red;"><?= form_error('lvl_name') ?></a>
+                  <input type="Text" name="icb_name" class="form-control <?= form_error('icb_name') == TRUE ? 'is-invalid' : ''; ?>" placeholder="Enter Iconbar Name *">
+                  <a style="color: red;"><?= form_error('icb_name') ?></a>
                 </div>
                 <div class="form-group">
-                  <textarea name="lvl_description" class="form-control" placeholder="Enter Description"><?= $levels['lvl_description'] ?></textarea>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" name="icb_image" class="custom-file-input <?= form_error('icb_image') == TRUE ? 'is-invalid' : ''; ?>">
+                      <a style="color: red;"><?= form_error('icb_image') ?></a>
+                      <label class="custom-file-label" for="exampleInputFile">Choose Iconbar</label>
+                    </div>
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="">Upload</span>
+                    </div>
+                  </div>
+                  <a style="color: red;"><?= form_error('icb_image') ?></a>
                 </div>
                 <div class="form-group">
                   <button type="Submit" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>

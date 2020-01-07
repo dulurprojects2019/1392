@@ -4,15 +4,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AdminLTE 3 | Dashboard</title>
+  <?php foreach($iconbar as $icon) : ?>
+      <link rel="icon" href="<?=base_url()?>assets/img/settings/iconbar/<?=$icon['icb_image']?>">
+  <?php endforeach ?>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
   <!-- Tags -->
-  <link rel="stylesheet" href="<?= base_url() ?>assets/theme/backend/plugins/bootstrap/css/bootstrap-tagsinput.css">
+  <!-- <link rel="stylesheet" href="<?= base_url() ?>assets/theme/backend/plugins/bootstrap/css/bootstrap-tagsinput.css"> -->
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?= base_url() ?>assets/theme/backend/plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="<?= base_url() ?>assets/theme/backend/https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bbootstrap 4 -->
   <link rel="stylesheet" href="<?= base_url() ?>assets/theme/backend/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
@@ -31,7 +34,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="<?= base_url() ?>assets/theme/backend/plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
-  <link href="<?= base_url() ?>assets/theme/backend/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <!-- DataTables -->
   <link rel="stylesheet" href="<?= base_url() ?>assets/theme/backend/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
 </head>
@@ -187,7 +190,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- MENU -->
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link active">
+            <a href="<?= site_url() ?>" class="nav-link active">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Dashboard
@@ -201,7 +204,6 @@
               <p>
                 Accounts
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -215,6 +217,23 @@
                 <a href="<?= site_url('accounts/levels/levels-list'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Level List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>
+                Settings
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= site_url('settings/iconbar'); ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Iconbar</p>
                 </a>
               </li>
             </ul>
@@ -281,31 +300,6 @@
 <!-- DataTables -->
 <script src="<?= base_url() ?>assets/theme/backend/plugins/datatables/jquery.dataTables.js"></script>
 <script src="<?= base_url() ?>assets/theme/backend/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
-
-
-<!-- form -->
-<!-- jQuery -->
-<script src="<?= base_url() ?>assets/theme/backend/plugins/jquery/jquery.min.js"></script>
-<script src="<?= base_url() ?>assets/theme/backend/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Select2 -->
-<script src="<?= base_url() ?>assets/theme/backend/plugins/select2/js/select2.full.min.js"></script>
-<!-- Bootstrap4 Duallistbox -->
-<script src="<?= base_url() ?>assets/theme/backend/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
-<!-- InputMask -->
-<script src="<?= base_url() ?>assets/theme/backend/plugins/moment/moment.min.js"></script>
-<script src="<?= base_url() ?>assets/theme/backend/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
-<!-- date-range-picker -->
-<script src="<?= base_url() ?>assets/theme/backend/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- bootstrap color picker -->
-<script src="<?= base_url() ?>assets/theme/backend/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="<?= base_url() ?>assets/theme/backend/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Bootstrap Switch -->
-<script src="<?= base_url() ?>assets/theme/backend/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
-<!-- AdminLTE App -->
-<script src="<?= base_url() ?>assets/theme/backend/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?= base_url() ?>assets/theme/backend/dist/js/demo.js"></script>
 
 <!-- page script -->
 <script>

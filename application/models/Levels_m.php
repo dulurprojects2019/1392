@@ -29,8 +29,8 @@ class Levels_m extends CI_Model {
 			'lvl_name' => $this->input->post('lvl_name'),
 			'lvl_slug' => strtolower($slug),
 			'lvl_description' => $this->input->post('lvl_description'),
-			'lvl_created_at' => $this->input->post('lvl_created_at', array('type' => 'timestamp'))
-			// 'lvl_created_by' => $this->fungsi->user_login()->usr_id
+			'lvl_created_at' => $this->input->post('lvl_created_at', array('type' => 'timestamp')),
+			'lvl_created_by' => $this->fungsi->user_login()->usr_id
 		);
 		return $this->db->insert('users_level', $data);
 	}
@@ -41,8 +41,8 @@ class Levels_m extends CI_Model {
 			'lvl_name' => $this->input->post('lvl_name'),
 			'lvl_slug' => strtolower($slug),
 			'lvl_description' => $this->input->post('lvl_description'),
-			'lvl_edited_at' => $this->input->post('lvl_edited_at', array('type' => 'timestamp'))
-			// 'lvl_edited_by' => $this->fungsi->user_login()->usr_id
+			'lvl_edited_at' => $this->input->post('lvl_edited_at', array('type' => 'timestamp')),
+			'lvl_edited_by' => $this->fungsi->user_login()->usr_id
 		);
 		$this->db->where('lvl_id', $this->input->post('lvl_id'));
 		return $this->db->update('users_level', $data);
